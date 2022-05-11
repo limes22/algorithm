@@ -1,4 +1,4 @@
-var showSum = function(){
+var showNum = function(){
   var num1 = document.getElementsByTagName("input")[0].value;
   var result = parseInt(num1)
   document.getElementsByTagName("input")[0].value=result;
