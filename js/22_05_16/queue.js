@@ -6,46 +6,71 @@ const queueInit = (n) => {
   queue = new Array(n);
   front = 0;
   back = 0;
+  console.log("queue length: ", queue.length);
 }
 
 const enqueue = (inputNumbers) => {
+  // if (queue[front] !== undefined) {
+  //     console.log(`queue is full`);
+  // } else {
+  //   if (front > 7) {
+  //     front = 0;
+  //     queue[front] = inputNumbers;
+  //     front = front + 1;
+  //   } else {
+  //     queue[front] = inputNumbers;
+  //     front = front + 1;
+  //   }
+  // }
   if (queue[front] !== undefined) {
-      console.log(`queue is full`)
-  } else {
-    if (front > 7) {
-      front = 0
-      queue[front] = inputNumbers
-      front = front + 1
-    } else {
-      queue[front] = inputNumbers
-      front = front + 1
-    }
-}
+    console.log('queue is full');
+    return;
+  }
+  queue[front] = inputNumbers;
+  front += 1;
+  if (front === queue.length) {
+    front = 0;
+  }
+  printQueue();
 }
 
 const dequeue = () => {
-  queue[back] = undefined
-  back = back + 1
-}
-
-const printAll = () => {
-  console.log("Print All")
-  for (i=0; i<10; i++) {
-    console.log(queue[i])
+  // queue[back] = undefined;
+  // back = back + 1;
+  if (queue[back] === undefined) {
+    console.log('queue is emtpy');
+    return;
   }
+  const dequeueData = queue[back];
+  queue[back] = undefined;
+  back += 1;
+  if (back === queue.length) {
+    back = 0;
+  }
+  console.log('dequeue data :', dequeueData);
+  printQueue();
 }
 
-queueInit(8)
-enqueue(3)
-enqueue(5)
-enqueue(7)
-enqueue(9)
-enqueue(11)
-enqueue(12)
-enqueue(13)
-enqueue(1)
-dequeue()
-enqueue(10)
-enqueue(11)
-printAll()
-console.log(queue)
+const printQueue = () => {
+  // console.log("Print All")
+  // for (i=0; i<10; i++) {
+  //   console.log(queue[i])
+  // }
+  // let queueDataStrings = '';
+  // for (i=0; i < queue.length; i++) {
+  //   queueDataStrings = queueDataStrings.concat(queue[i], ' ')
+  // }
+  console.log('queue: ', queue);
+}
+
+queueInit(4)
+enqueue(1);
+enqueue(2);
+enqueue(3);
+enqueue(4);
+enqueue(5);
+dequeue();
+dequeue();
+dequeue();
+dequeue();
+dequeue();
