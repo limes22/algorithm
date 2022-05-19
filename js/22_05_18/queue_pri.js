@@ -9,7 +9,7 @@ const queueInit = (n) => {
  console.log('length:', queue.length)
 }
 
-const enqueue = (inputNumber, priority) => {
+const enqueue = (inputNumber, priority = 'unknown') => {
   if (queue[front] !== undefined) {
     console.log('queue is full')
     return;
@@ -20,6 +20,8 @@ const enqueue = (inputNumber, priority) => {
   if (front === queue.length){
     front = 0;
   }
+ // if (queue.priority === 'unknown') {
+ // queue[front] = queue.splice(front +1, 1, {inputNumber, priority}) }
   console.log('enqueue data: ', enqueueData);
 }
 
