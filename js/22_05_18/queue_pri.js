@@ -15,9 +15,9 @@ const enqueue = (inputNumber, priority = -1) => {
     return;
   }
   queue[front] = { inputNumber, priority };
-  bubbleSort();
   const enqueueData = queue[front];
   front += 1;
+  bubbleSort();
   if (front === queue.length) {
     front = 0;
   }
@@ -47,16 +47,23 @@ const showAll = () => {
 };
 
 const bubbleSort = () => {
-  for (let i = 0; i < queue.length; i++) {
-    for (let j = i + 1; j < queue.length; j++) {
-      // queue[i]
-      if (!queue[i] || !queue[j]) {
+  for (let i = (front - 1); i < queue.length + (front - 1); i++) {
+    let cur = i;
+    if (i >= queue.length) {
+      cur -= queue.length
+    }
+    for (let j = (i + 1); j < queue.length + (i + 1); j++) {
+      let next = j;
+      if (j >= queue.length) {
+        next -= queue.length
+      }
+      if (!queue[cur] || !queue[next]) {
         continue;
       }
-      if (queue[i].priority > queue[j].priority) {
-        const temp = queue[i];
-        queue[i] = queue[j];
-        queue[j] = temp;
+      if (queue[cur].priority > queue[next].priority) {
+        const temp = queue[cur];
+        queue[cur] = queue[next];
+        queue[next] = temp;
       }
     }
   }
@@ -64,10 +71,10 @@ const bubbleSort = () => {
 
 queueInit(3);
 enqueue(1, 5);
-enqueue(1, 3);
-enqueue(1, 1);
-dequeue();
-dequeue();
-enqueue(1, 1);
-dequeue();
+// enqueue(1, 3);
+// enqueue(1, 1);
+// dequeue();
+// dequeue();
+// enqueue(1, 1);
+// dequeue();
 showAll();
