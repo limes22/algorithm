@@ -1,6 +1,6 @@
 var stack // data structure array
 var front = 0;
-var back = 0; // data index cursor
+var back = 0; 
 
 
 const stackInit = (n) => {
