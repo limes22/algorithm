@@ -52,21 +52,6 @@ const showAll = () => {
   }
 }
 
-const bubbleSort = () => {
-  for (let i = 0; i < queue.length; i++) {
-    for (let j = i + 1; j < queue.length; j++) {
-      // queue[i]
-      if (!queue[i] || !queue[j]) {
-        continue;
-      }
-      if (queue[i].priority > queue[j].priority) {
-        const temp = queue[i];
-        queue[i] = queue[j];
-        queue[j] = temp;
-      }
-    }
-  }
-}
 
 
 queueInit(3)
