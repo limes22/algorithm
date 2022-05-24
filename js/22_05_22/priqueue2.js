@@ -1,5 +1,4 @@
 let queue;
-let back = 0;
 
 const queueInit = (n) => {
   queue = new Array(n);
@@ -19,8 +18,8 @@ const enqueue = (inputNumber, priority = -1) => {
 }
 
 const dequeue = () => {
-  var priority;
-  var priorityIdx;
+  let priority;
+  let priorityIdx;
   for (let i = 0; i < queue.length; i++) {
     if (!queue[i]) {
       continue;
@@ -28,20 +27,22 @@ const dequeue = () => {
     if (!priority) {
       priority = queue[i].priority;
       priorityIdx = i;
+      console.log(`priorityIdx(1)`, priorityIdx)
       continue;
     }
     if (queue[i].priority <= priority) {
       priority = queue[i].priority;
       priorityIdx = i;
+      console.log(`priorityIdx(2)`, priorityIdx)
     }
   }
+  console.log(`priorityIdx(3)`, priorityIdx)
   const dequeue = queue[priorityIdx]
   console.log(`dequue: `,dequeue)
-  queue[priorityIdx] = undefined;
-  if (!priorityIdx) {
-    console.log("queue is empty")
-    return;
+    if (queue[priorityIdx] === undefined) {
+    console.log(`queue is empty`)
   }
+  queue[priorityIdx] = undefined;
 };
 
 
@@ -55,11 +56,9 @@ const showAll = () => {
 
 
 queueInit(3)
-enqueue(5,4)
-enqueue(6,5)
-enqueue(7,3)
-dequeue()
-dequeue()
+enqueue(5, 2)
+enqueue(6, 3)
+enqueue(8, 1)
 dequeue()
 dequeue()
 dequeue()
