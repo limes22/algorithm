@@ -17,7 +17,10 @@ const addNode = (parentName, nodeName) => {
 // 재귀 함수(응용)로 해보기, for 문 반복으로
 const printRelativeNode = (nodeName) => {
   console.log({nodeName, ...nodePool[nodeName]})
-  if(nodePool[nodeName].childs.length) {
+  if(nodePool[nodeName].childs.length === 0) {
+    return;
+  } else {
+    // console.log(nodePool[nodeName].childs.length)
     for(let i=0; i<nodePool[nodeName].childs.length; i++){
       printRelativeNode(nodePool[nodeName].childs[i]);
     }
@@ -29,5 +32,6 @@ addNode("node1", "node1Child1");
 addNode("node1Child1", "node1ch")
 addNode("node1", "node1Child2");
 addNode("node2", "node2Child1")
-// addNode("node1Child1", "node1ChildChild1");
-console.log(printRelativeNode('default'))
+addNode("node1Child1", "node1ChildChild1");
+addNode("node1Child1", "node1ChildChild2");
+console.log(printRelativeNode('node1'))
