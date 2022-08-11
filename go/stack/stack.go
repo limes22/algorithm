@@ -2,14 +2,9 @@ package stack
 
 import "fmt"
 
-type Index interface {
-	Cursor() int
-}
-
 type Stack struct {
 	Array  []int
 	Cursor int
-	Lenth  int
 }
 
 func (s *Stack) StackInit(n int) []int {
@@ -21,7 +16,6 @@ func (s *Stack) StackInit(n int) []int {
 
 func (s *Stack) Push(inputNumber int) []int {
 	c := s.Cursor
-	fmt.Println("위에", c)
 	if c >= len(s.Array) {
 		fmt.Println("stack is full")
 	} else {
@@ -65,9 +59,7 @@ func main() {
 	fmt.Println(s.Push(4))
 	fmt.Println(s.Push(5))
 	fmt.Println(s.Push(4))
-	fmt.Println("main", s.Cursor)
 	fmt.Println(s.Pop())
-	fmt.Println("main", s.Cursor)
 	fmt.Println(s.Pop())
 	fmt.Println(s.Pop())
 	fmt.Println(s.Pop())
