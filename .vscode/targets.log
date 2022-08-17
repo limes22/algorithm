@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug 15 08:21:16 2022
+# Make data base, printed on Tue Aug 16 10:48:00 2022
 
 # Variables
 
@@ -57,7 +59,7 @@ VSCODE_CWD = /root
 # environment
 GOPROXY = https://proxy.golang.org,direct
 # environment
-SSH_CONNECTION = 172.31.10.1 59931 172.31.10.31 22
+SSH_CONNECTION = 172.31.10.1 52060 172.31.10.31 22
 # environment
 PATH = /usr/local/go/bin:/root/.vscode-server/bin/6d9b74a70ca9c7733b29f0456fd8195364076dda/bin/remote-cli:/root/.nvm/versions/node/v16.16.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
@@ -69,7 +71,7 @@ NVM_BIN = /root/.nvm/versions/node/v16.16.0/bin
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /run/user/0/vscode-ipc-568b4c85-95ba-4618-9afb-2661ef05778c.sock
+VSCODE_IPC_HOOK_CLI = /run/user/0/vscode-ipc-6aa13bbe-e6cb-4302-a29b-084d511121fa.sock
 # environment
 KUBECONFIG = /etc/rancher/k3s/k3s.yaml
 # default
@@ -111,7 +113,7 @@ MAKECMDGOALS := all
 # environment
 SHLVL = 0
 # environment
-XDG_SESSION_ID = 15
+XDG_SESSION_ID = 7
 # environment
 USER = root
 # makefile
@@ -131,7 +133,7 @@ MAKEFLAGS = pqrR
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_CLIENT = 172.31.10.1 59931 22
+SSH_CLIENT = 172.31.10.1 52060 22
 # environment
 NVM_DIR = /root/.nvm
 # automatic
@@ -227,8 +229,6 @@ GNUmakefile:
 # strcache performance: lookups = 22 / hit rate = 13%
 # hash-table stats:
 # Load=19/8192=0%, Rehash=0, Collisions=1/22=5%
-# Finished Make data base on Mon Aug 15 08:21:16 2022
+# Finished Make data base on Tue Aug 16 10:48:00 2022
 
  
-make: *** No rule to make target 'all'.  Stop.
-

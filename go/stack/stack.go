@@ -3,53 +3,53 @@ package stack
 import "fmt"
 
 type Stack struct {
-	Array  []int
-	Cursor int
+	array  []int
+	cursor int
 }
 
 func (s *Stack) StackInit(n int) []int {
-	s.Array = make([]int, n)
-	s.Cursor = 0
-	fmt.Println(s.Array)
-	return s.Array
+	s.array = make([]int, n)
+	s.cursor = 0
+	fmt.Println(s.array)
+	return s.array
 }
 
 func (s *Stack) Push(inputNumber int) []int {
-	c := s.Cursor
-	if c >= len(s.Array) {
+	c := s.cursor
+	if c >= len(s.array) {
 		fmt.Println("stack is full")
 	} else {
-		s.Array[c] = inputNumber
+		s.array[c] = inputNumber
 	}
 	s.PushCursor()
 	fmt.Println("inputNumber", inputNumber)
-	return s.Array
+	return s.array
 }
 
 func (s *Stack) PushCursor() int {
-	if len(s.Array) == s.Cursor {
+	if len(s.array) == s.cursor {
 		fmt.Println("stack is full")
 	} else {
-		s.Cursor++
+		s.cursor++
 	}
-	return s.Cursor
+	return s.cursor
 }
 
 func (s *Stack) PopCursor() int {
-	if s.Cursor == 0 {
+	if s.cursor == 0 {
 		fmt.Println("stack is empty")
 	} else {
-		s.Cursor--
+		s.cursor--
 	}
-	return s.Cursor
+	return s.cursor
 }
 
 func (s *Stack) Pop() []int {
-	c := s.Cursor - 1
-	s.Array[c] = 0
+	c := s.cursor - 1
+	s.array[c] = 0
 	s.PopCursor()
 	fmt.Println("pop", c)
-	return s.Array
+	return s.array
 }
 
 func main() {
