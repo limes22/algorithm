@@ -2,127 +2,106 @@ package priqueue
 
 import "fmt"
 
-type Array []interface{}
+type ArrayIdx struct {
+	Value    int
+	Priority int
+}
 
 type Queue struct {
-	ArrayNum []int
-	ArrayPri []int
-	Length   int
-	Front    int
-	Back     int
+	arrayNum []ArrayIdx
+	length   int
+	front    int
+	back     int
 }
 
-func (q *Queue) LengthInit(n int) int {
-	q.Length = n
-	fmt.Println("length", q.Length)
-	q.QueueNumInit()
-	q.QueuePriInit()
-	fmt.Println(q.ArrayNum, q.ArrayPri)
-	return q.Length
+func (q *Queue) QueueInit(n int) {
+	q.length = n
+	q.front = 0
+	q.back = 0
+	q.arrayNum = make([]ArrayIdx, n)
+	fmt.Println(q.length)
+	fmt.Println("queue init", q.arrayNum)
 }
 
-func (q *Queue) QueueNumInit() []int {
-	q.ArrayNum = make([]int, q.Length)
-	return q.ArrayNum
-}
-
-func (q *Queue) QueuePriInit() []int {
-	q.ArrayPri = make([]int, q.Length)
-	return q.ArrayPri
-}
-
-func (q *Queue) Enqueue(inputNumbers int, priority int) []int {
-	f := q.Front
-	if f == q.Length {
+func (q *Queue) EnQueue(inputNumber, priority int) {
+	f := q.front
+	enq := ArrayIdx{Value: inputNumber, Priority: priority}
+	if f == q.length {
 		f = 0
-		q.ArrayNum[f] = inputNumbers
-		q.ArrayPri[f] = priority
-	} else if q.ArrayNum[f] == 0 {
-		q.ArrayNum[f] = inputNumbers
-		q.ArrayPri[f] = priority
+	} else if q.arrayNum[f].Value == 0 {
+		q.arrayNum[f] = enq
 	} else {
-		fmt.Println("queue is full")
+		fmt.Println("queue if full")
 	}
 	q.EnqueueFront()
 	q.BubbleSort()
-	fmt.Println("enequqe", q.ArrayNum, q.ArrayPri)
-	q.ReturnPri()
-	return q.ArrayNum
-}
-
-func (q *Queue) ReturnPri() []int {
-	return q.ArrayPri
-}
-
-func (q *Queue) Dequeue() []int {
-	b := q.Back
-	if b == q.Length {
-		b = 0
-	} else if q.ArrayNum[b] != 0 {
-		q.ArrayNum[b] = 0
-		q.ArrayPri[b] = 0
-	} else {
-		fmt.Println("Queue is empty")
-	}
-	q.DequeueBack()
-	fmt.Println("dequqe", q.ArrayNum, q.ArrayPri)
-	q.ReturnPri()
-	return q.ArrayNum
+	fmt.Println("enqueue", q.arrayNum, f)
 }
 
 func (q *Queue) EnqueueFront() int {
-	if q.Front == q.Length {
-		q.Front = 0
+	if q.front == q.length {
+		q.front = 0
 	} else {
-		q.Front++
+		q.front++
 	}
-	return q.Front
+	return q.front
 }
 
-func (q *Queue) DequeueBack() int {
-	if q.Back == q.Length {
-		q.Back = 0
-		fmt.Println("queue is empty")
-	} else {
-		q.Back++
-	}
-	return q.Back
-}
-
-func (q *Queue) BubbleSort() []int {
-	f := q.Front
-	for i := f - 1; i < q.Length+(f-1); i++ {
+func (q *Queue) BubbleSort() {
+	f := q.front + 1
+	for i := f - 1; i < q.length+(f-1); i++ {
 		cur := i
-		if i >= q.Length {
-			cur -= q.Length
+		if i >= q.length {
+			cur -= q.length
 		}
-		for j := i + 1; j < q.Length+(i+1); j++ {
+		for j := i + 1; j < q.length+(i+1); j++ {
 			next := j
-			if j >= q.Length {
-				next -= q.Length
-			} else if q.ArrayPri[cur] == 0 {
+			if j >= q.length {
+				next -= q.length
+			} else if q.arrayNum[cur].Priority == q.arrayNum[next].Priority {
 				continue
-			} else if q.ArrayPri[cur] > q.ArrayPri[next] {
-				tempNum := q.ArrayNum[cur]
-				tempPri := q.ArrayPri[cur]
-				q.ArrayNum[cur] = q.ArrayNum[next]
-				q.ArrayPri[cur] = q.ArrayPri[next]
-				q.ArrayNum[next] = tempNum
-				q.ArrayPri[next] = tempPri
+			} else if q.arrayNum[cur].Priority > q.arrayNum[next].Priority {
+				tempNum := q.arrayNum[cur]
+				q.arrayNum[cur] = q.arrayNum[next]
+				q.arrayNum[next] = tempNum
 			} else {
 				fmt.Println("bubblesort end")
 			}
 		}
 	}
-	q.ReturnPri()
-	return q.ArrayNum
+}
+
+func (q *Queue) Dequeue() {
+	b := q.back
+	zeroq := ArrayIdx{Value: 0, Priority: 0}
+	if b == q.length {
+		b = 0
+	} else if q.arrayNum[b].Value != 0 {
+		q.arrayNum[b] = zeroq
+	} else {
+		fmt.Println("Queue is empty")
+	}
+	q.DequeueBack()
+	fmt.Println("dequeue", q.arrayNum, b)
+}
+
+func (q *Queue) DequeueBack() {
+	if q.back == q.length {
+		q.back = 0
+		fmt.Println("queue is empty")
+	} else {
+		q.back++
+	}
 }
 
 func main() {
 	var q Queue
-	q.LengthInit(3)
-	q.Enqueue(1, 3)
-	q.Enqueue(2, 4)
-	fmt.Println(q.Front)
-	q.Enqueue(3, 5)
+	q.QueueInit(3)
+	q.EnQueue(1, 3)
+	q.EnQueue(2, 2)
+	q.EnQueue(3, 1)
+	q.EnQueue(4, 5)
+	q.Dequeue()
+	q.Dequeue()
+	q.Dequeue()
 }
