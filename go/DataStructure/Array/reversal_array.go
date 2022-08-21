@@ -1,4 +1,4 @@
-package main
+package reversal_array
 
 import "fmt"
 
@@ -7,7 +7,7 @@ import "fmt"
 //d = 2 -> 1,2 / 3,4,5,6,7 로 구간을 나누어 reverse 하고 합친다.
 
 //swap을 활용한 reverse 구현
-func reverseArr(arr [10]int, start int, end int) {
+func reverseArr(arr []int, start int, end int) {
 	for start < end {
 		temp := arr[start]
 		arr[start] = arr[end]
@@ -18,37 +18,17 @@ func reverseArr(arr [10]int, start int, end int) {
 }
 
 //d로 나눠서 역전 알고리즘 수행
-func rotateLeft(arr [10]int, d int, n int) {
+func rotateLeft(arr []int, d int, n int) {
 	reverseArr(arr, 0, d-1)
 	reverseArr(arr, d, n-1)
 	reverseArr(arr, 0, n-1)
 }
 
-func leftRotate(arr []int, d int, n int) {
-	i := 0
-	temp := arr[i]
-	for i = 0; i < gcd(d, n); i++ {
-		j := i
-		for true {
-			k := j + d
-			if k >= n {
-				k = k - n
-			}
-			if k == i {
-				break
-			}
-			arr[j] = arr[k]
-			j = k
-		}
-		fmt.Println(j)
-		arr[j] = temp
-	}
-}
-
 func main() {
-	arr := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	n := len(arr)
+	d := 3
 	fmt.Println(arr)
-	leftRotate(arr, 2, n)
+	rotateLeft(arr, d, n)
 	fmt.Println(arr)
 }
