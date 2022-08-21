@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64c9a2cf-63aa-4e3f-869a-5f6e25cd7d95" name="Default Changelist" comment="Default Changelist">
-      <change afterPath="$PROJECT_DIR$/go/tree/tree.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go/tree/treeint.go" afterDir="false" />
+    <list default="true" id="64c9a2cf-63aa-4e3f-869a-5f6e25cd7d95" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/queue/priqueue.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/queue/priqueue.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Go File" />
-      </list>
-    </option>
   </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../Program Files/Go" />
   <component name="Git.Settings">
@@ -39,7 +31,6 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
@@ -101,15 +92,6 @@
     <settings-migrated>true</settings-migrated>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/go/main.go</url>
-          <line>46</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="GoApplicationRunConfiguration">
         <watch expression="*(*&quot;void&quot;)(0)" />
