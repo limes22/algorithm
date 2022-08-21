@@ -1,4 +1,4 @@
-package juggling_araray
+package juggling_array
 
 import "fmt"
 

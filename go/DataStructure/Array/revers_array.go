@@ -1,4 +1,4 @@
-package adr
+package revers_array
 
 import "fmt"
 
