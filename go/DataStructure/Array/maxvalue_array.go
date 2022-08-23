@@ -1,4 +1,4 @@
-package main
+package revers_array
 
 import "fmt"
 
