@@ -1,19 +1,6 @@
-package main
+package revers_array
 
 import "fmt"
-
-type Node struct {
-	data int
-	next *Node
-}
-
-type LinkedList struct {
-	head *Node
-}
-
-func (l *LinkedList) lInit() {
-	l.head = nil
-}
 
 func fix(A []int, len int) {
 	for i := 0; i < len; i++ {
