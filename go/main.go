@@ -7,33 +7,37 @@ type Node struct {
 	next *Node
 }
 
-type LinkedList struct {
+type Main struct {
 	head *Node
 }
 
-func (l *LinkedList) lInit() {
-	l.head = nil
+func (n *Node) NodeInit(d int) Node {
+	node := Node{
+		data: d,
+		next: nil,
+	}
+	return node
 }
 
-func fix(A []int, len int) {
-	for i := 0; i < len; i++ {
-		if A[i] != -1 && A[i] != i {
-			x := A[i]
-			if A[x] != -1 && A[x] != x {
-				y := A[x]
-				x = y
-			}
-			A[x] = x
-			if A[i] != i {
-				A[i] = -1
-			}
-		}
+func (n *Node) PrintList() {
+	var m Main
+	n = m.head
+	if n != nil {
+		fmt.Println(n.data, "")
+		n = n.next
 	}
 }
 
 func main() {
-	A := []int{-1, -1, 6, 1, 9, 3, 2, -1, 4, -1}
-	len := len(A)
-	fix(A, len)
-	fmt.Println(A)
+	var n Node
+	llist := new(Main)
+	first := n.NodeInit(1)
+	llist.head = &first
+	second := n.NodeInit(2)
+	third := n.NodeInit(3)
+
+	llist.head.next = &second
+	second.next = &third
+	fmt.Println(llist)
+	n.PrintList()
 }
