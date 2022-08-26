@@ -2,6 +2,14 @@ package main
 
 import "fmt"
 
+//stack
+//LIFO(Last In First Out, 후입선출): 가장 나중에 들어온 것이 가장 먼저 나옴
+//함수의 콜스택, 문자열 역순 출력, 연ㅅ안자 후위 표기법
+//데이터 넣음 : push()
+//데이터 최상위 값 뺌 : pop()
+//비어있는지 확인 : isEmpty()
+//꽉차있는지 확인 : isFull()
+
 type Node struct {
 	data int
 	next *Node

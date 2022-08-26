@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64c9a2cf-63aa-4e3f-869a-5f6e25cd7d95" name="Default Changelist" comment="Default Changelist">
-      <change afterPath="$PROJECT_DIR$/go/DataStructure/Heap/heap.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/DataStructure/Array/maxvalue_array.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/DataStructure/Array/maxvalue_array.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/stack/stack.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/stack/stack.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,8 +105,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/go/main.go</url>
-          <line>1</line>
-          <option name="timeStamp" value="42" />
+          <line>74</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/main.go</url>
+          <line>73</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/main.go</url>
+          <line>75</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/main.go</url>
+          <line>76</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/main.go</url>
+          <line>77</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/main.go</url>
+          <line>78</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -126,6 +152,9 @@
         <watch expression="*(*&quot;[]*main.Elelment&quot;)(824634785808)" />
         <watch expression="*(*&quot;[]*main.Elelment&quot;)(824634007384)" />
         <watch expression="*(*&quot;main.IntHeap&quot;)(824634809720)" />
+        <watch expression="*(*&quot;main.Node&quot;)(824634024560)" />
+        <watch expression="*(*&quot;main.Node&quot;)(824634024560)" />
+        <watch expression="*(*&quot;main.Node&quot;)(824634024560)" />
       </configuration>
     </watches-manager>
   </component>

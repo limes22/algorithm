@@ -3,19 +3,19 @@ package stack
 import "fmt"
 
 type Stack struct {
-	array  []int
-	cursor int
+	array []int
+	sp    int
 }
 
 func (s *Stack) StackInit(n int) []int {
 	s.array = make([]int, n)
-	s.cursor = 0
+	s.sp = 0
 	fmt.Println(s.array)
 	return s.array
 }
 
 func (s *Stack) Push(inputNumber int) []int {
-	c := s.cursor
+	c := s.sp
 	if c >= len(s.array) {
 		fmt.Println("stack is full")
 	} else {
@@ -27,25 +27,25 @@ func (s *Stack) Push(inputNumber int) []int {
 }
 
 func (s *Stack) PushCursor() int {
-	if len(s.array) == s.cursor {
+	if len(s.array) == s.sp {
 		fmt.Println("stack is full")
 	} else {
-		s.cursor++
+		s.sp++
 	}
-	return s.cursor
+	return s.sp
 }
 
 func (s *Stack) PopCursor() int {
-	if s.cursor == 0 {
+	if s.sp == 0 {
 		fmt.Println("stack is empty")
 	} else {
-		s.cursor--
+		s.sp--
 	}
-	return s.cursor
+	return s.sp
 }
 
 func (s *Stack) Pop() []int {
-	c := s.cursor - 1
+	c := s.sp - 1
 	s.array[c] = 0
 	s.PopCursor()
 	fmt.Println("pop", c)
