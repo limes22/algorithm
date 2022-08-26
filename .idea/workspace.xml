@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64c9a2cf-63aa-4e3f-869a-5f6e25cd7d95" name="Default Changelist" comment="Default Changelist">
-      <change beforePath="$PROJECT_DIR$/go/DataStructure/LinkedList/linked_list.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/DataStructure/LinkedList/linked_list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go/DataStructure/Heap/heap.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,12 +100,32 @@
     <settings-migrated>true</settings-migrated>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/main.go</url>
+          <line>1</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="GoApplicationRunConfiguration">
         <watch expression="*(*&quot;void&quot;)(0)" />
         <watch expression="*(*&quot;main.Node&quot;)(0)" />
         <watch expression="*(*&quot;main.Node&quot;)(0)" />
         <watch expression="*(*&quot;main.Node&quot;)(0)" />
+        <watch expression="*(*&quot;[]*main.Elelment&quot;)(824634007384)" />
+        <watch expression="*(*&quot;main.Elelment&quot;)(824634785920)" />
+        <watch expression="*(*&quot;main.Elelment&quot;)(824634785920)" />
+        <watch expression="*(*&quot;main.Elelment&quot;)(824633852288)" />
+        <watch expression="*(*&quot;main.Elelment&quot;)(824633852160)" />
+        <watch expression="*(*&quot;[]*main.Elelment&quot;)(824634785808)" />
+        <watch expression="*(*&quot;main.Elelment&quot;)(824634785984)" />
+        <watch expression="*(*&quot;main.Elelment&quot;)(824634785984)" />
+        <watch expression="*(*&quot;[]*main.Elelment&quot;)(824634785808)" />
+        <watch expression="*(*&quot;[]*main.Elelment&quot;)(824634007384)" />
+        <watch expression="*(*&quot;main.IntHeap&quot;)(824634809720)" />
       </configuration>
     </watches-manager>
   </component>
