@@ -2,79 +2,74 @@ package main
 
 import "fmt"
 
-//stack
-//LIFO(Last In First Out, 후입선출): 가장 나중에 들어온 것이 가장 먼저 나옴
-//함수의 콜스택, 문자열 역순 출력, 연ㅅ안자 후위 표기법
-//데이터 넣음 : push()
-//데이터 최상위 값 뺌 : pop()
-//비어있는지 확인 : isEmpty()
-//꽉차있는지 확인 : isFull()
+//Heap
 
-type Node struct {
-	data int
-	next *Node
+type Element struct {
+	key int
 }
 
-type Main struct {
-	head *Node
+type Heap struct {
+	heap []*Element
+	size int
 }
 
-func (n *Node) NodeInit(d int) *Node {
-	node := Node{
-		data: d,
-		next: nil,
+func (e *Element) MaxHeapInsert(h *Heap, item Element) {
+	var i int
+	i = 100 + h.size
+	j := i / 2
+	if i != 1 && item.key == h.heap[j].key {
+		h.heap[i] = h.heap[j]
+		i /= 2
 	}
-	return &node
+	h.heap[i] = &item
 }
 
-func (m *Main) Push(new_data int) {
-	new_node := new(Node)
-	new_node.data = new_data
-	new_node.next = m.head
-	m.head = new_node
-}
-
-func (m *Main) InsertAfter(prev_node *Node, new_data int) {
-	if prev_node == nil {
-		fmt.Println("The given Previous node canot be null")
-		return
+func (e *Element) MaxHeapDelete(h *Heap) *Element {
+	var parent int
+	var child int
+	var item *Element
+	var temp *Element
+	item = h.heap[1]
+	temp = h.heap[h.size-1]
+	parent = 1
+	child = 1
+	if child <= h.size {
+		if child < h.size && h.heap[child].key < h.heap[child+1].key {
+			child++
+		}
+		if temp.key >= h.heap[child].key {
+			return nil
+		}
+		h.heap[parent] = h.heap[child]
+		parent = child
+		child *= 2
 	}
-	new_node := new(Node)
-	new_node.data = new_data
-	new_node.next = prev_node.next
-	prev_node.next = new_node
-}
-
-func (m *Main) Append(new_data int) {
-	new_node := new(Node)
-	new_node.data = new_data
-	if m.head == nil {
-		m.head = new(Node)
-		m.head.data = new_data
-		return
-	}
-	new_node.next = nil
-	last := m.head
-	if last.next != nil {
-		last = last.next
-		last.next = new_node
-		return
-	}
-}
-
-func (m *Main) PrintList() {
-	tnode := m.head
-	if tnode != nil {
-		fmt.Println(tnode.data, "")
-		tnode = tnode.next
-	}
+	h.heap[parent] = temp
+	return item
 }
 func main() {
-	var m Main
-	m.Append(8)
-	m.Push(7)
-	m.Push(1)
-	m.Append(4)
-	m.InsertAfter(m.head.next, 8)
-	m.PrintList()
+	var e Element
+	var MaxHeap Heap
+	var item Element
+	item.key = 9
+	e.MaxHeapInsert(&MaxHeap, item)
+	item.key = 7
+	e.MaxHeapInsert(&MaxHeap, item)
+	item.key = 6
+	e.MaxHeapInsert(&MaxHeap, item)
+	item.key = 4
+	e.MaxHeapInsert(&MaxHeap, item)
+	item.key = 5
+	e.MaxHeapInsert(&MaxHeap, item)
+	item.key = 1
+	e.MaxHeapInsert(&MaxHeap, item)
+	item.key = 3
+	e.MaxHeapInsert(&MaxHeap, item)
+	item.key = 8
+	e.MaxHeapInsert(&MaxHeap, item)
+
+	if MaxHeap.size > 0 {
+		item = *e.MaxHeapDelete(&MaxHeap)
+		fmt.Println(item.key)
+	}
 }
