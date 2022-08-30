@@ -1,7 +1,6 @@
-package main
+package BST
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -21,7 +20,7 @@ type Bst struct {
 	root *Node
 }
 
-// Search searches the targe node using key from the tree
+// Search searches the target node using key from the tree
 func (bst *Bst) Search(key int) *Node {
 	return search(bst.root, key)
 }
@@ -162,17 +161,4 @@ func isBST(n *Node, min, max int) bool {
 	}
 
 	return isBST(n.left, min, n.key-1) && isBST(n.right, n.key+1, max)
-}
-
-func main() {
-	b := Bst{}
-	b.Insert(8, 9)
-	b.Insert(3, 8)
-	b.Insert(10, 7)
-	b.Insert(1, 6)
-	b.Insert(6, 5)
-	b.Insert(4, 4)
-	b.Search(7)
-
-	fmt.Println(b.root)
 }
