@@ -1,4 +1,4 @@
-package main
+package Practice
 
 func Cal(queue1 []int, queue2 []int) {
 	top := len(queue1) - 1
