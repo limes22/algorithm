@@ -2,23 +2,43 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 func main() {
 	var n int
+	coin := 0
 	fmt.Scan(&n)
-	arr := make([]int, n)
-	before := 0
-	answer := 0
-
-	for i := 0; i < n; i++ {
-		fmt.Scan(&arr[i])
+	if n >= 50000 {
+		coin += n / 50000
+		n = n % 50000
 	}
-	sort.Sort(sort.IntSlice(arr))
-	for i := 0; i < n; i++ {
-		answer += before + arr[i]
-		before += arr[i]
+	if n >= 10000 {
+		coin += n / 10000
+		n = n % 10000
 	}
-	fmt.Println(answer)
+	if n >= 5000 {
+		coin += n / 5000
+		n = n % 5000
+	}
+	if n >= 1000 {
+		coin += n / 1000
+		n = n % 1000
+	}
+	if n >= 500 {
+		coin += n / 500
+		n = n % 500
+	}
+	if n >= 100 {
+		coin += n / 100
+		n = n % 100
+	}
+	if n >= 50 {
+		coin += n / 50
+		n = n % 50
+	}
+	if n >= 10 {
+		coin += n / 10
+		n = n % 10
+	}
+	fmt.Println(coin, n)
 }
