@@ -1,11 +1,11 @@
-package main
+package sorting
 
 import (
 	"fmt"
 	"sort"
 )
 
-func main() {
+func sorting() {
 
 	answer := 0
 	var n int
