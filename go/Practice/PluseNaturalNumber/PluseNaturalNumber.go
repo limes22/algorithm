@@ -1,10 +1,10 @@
-package main
+package PluseNaturalNumber
 
 import (
 	"fmt"
 )
 
-func main() {
+func PluseNaturalNumber() {
 	var s, n int
 	sum := 0
 	fmt.Scan(&s)
