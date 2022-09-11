@@ -1,10 +1,8 @@
-package main
+package coin
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func main() {
+func coin() {
 	var n, k, coin, now int
 	coins := make([]int, n)
 	fmt.Scanf("%d %d", &n, &k)
