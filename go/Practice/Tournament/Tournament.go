@@ -1,4 +1,4 @@
-package main
+package Tournament
 
 import (
 	"fmt"
@@ -21,6 +21,6 @@ func solution(n int, a int, b int) int {
 	return answer
 }
 
-func main() {
+func Tournament() {
 	fmt.Println(solution(8, 4, 7))
 }
