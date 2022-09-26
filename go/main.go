@@ -2,47 +2,27 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
-func solution(s string) int {
-	answer := 0
-	for i := 0; i < len(s); i++ {
-		if isRight(s) {
-			answer++
-		}
-		s = rotate(s)
+func solution(arr1 [][]int, arr2 [][]int) [][]int {
+	arr3 := make([][]int, len(arr1))
+	for i := range arr3 {
+		arr3[i] = make([]int, len(arr2[0]))
 	}
 
-	return answer
-}
-
-func rotate(s string) string {
-	head := s[0]
-	rotated := s[1:]
-	return string(rotated) + string(head)
-}
-func isRight(s string) bool {
-	stack := []string{}
-	open := "[{("
-	close := "]})"
-	L := len(s)
-	for i := 0; i < L; i++ {
-		if strings.Contains(open, string(s[i])) {
-			stack = append(stack, string(s[i]))
-			continue
+	for i := 0; i < len(arr1); i++ {
+		for j := 0; j < len(arr2[0]); j++ {
+			for l := 0; l < len(arr1[0]); l++ {
+				arr3[i][j] += arr1[i][l] * arr2[l][j]
+			}
 		}
-		if len(stack) == 0 {
-			return false
-		}
-		if strings.Index(open, stack[len(stack)-1]) != strings.Index(close, string(s[i])) {
-			return false
-		}
-		stack = stack[0 : len(stack)-1]
 	}
-	return len(stack) == 0
+
+	return arr3
 }
 
 func main() {
-	fmt.Println(solution("[](){}"))
+	arr1 := [][]int{{1, 4}, {3, 2}, {4, 1}}
+	arr2 := [][]int{{3, 3}, {3, 3}}
+	fmt.Println(solution(arr1, arr2))
 }
