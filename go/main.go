@@ -4,21 +4,34 @@ import (
 	"fmt"
 )
 
-func solution(arr1 [][]int, arr2 [][]int) [][]int {
-	arr3 := make([][]int, len(arr1))
-	for i := range arr3 {
-		arr3[i] = make([]int, len(arr2[0]))
-	}
+type Queue struct {
+	array []int
+	front int
+	back  int
+}
 
-	for i := 0; i < len(arr1); i++ {
-		for j := 0; j < len(arr2[0]); j++ {
-			for l := 0; l < len(arr1[0]); l++ {
-				arr3[i][j] += arr1[i][l] * arr2[l][j]
-			}
-		}
-	}
+func (q *Queue) QueueInit(n int) []int {
+	q.array = make([]int, n)
+	q.front = 0
+	q.back = 0
+	return q.array
+}
 
-	return arr3
+func (q *Queue) Enqueue(inputNumbers int) []int {
+	f := q.front
+	if f == len(q.array) {
+		f = 0
+	} else if q.array[f] == 0 {
+		q.array[f] = inputNumbers
+	} else {
+		fmt.Println("queue is full")
+	}
+	q.EnqueueFront()
+	return q.array
+}
+
+func solution(n int, lost []int, reserve []int) int {
+	return 0
 }
 
 func main() {
