@@ -1,4 +1,4 @@
-package main
+package LinkedList
 
 import "fmt"
 
@@ -21,21 +21,7 @@ func main() {
 	onePhoneBook := newFriedPhoneInfo("osj1", 1, &initPhoneBook)
 	twoPhoneBook := newFriedPhoneInfo("osj2", 2, &onePhoneBook)
 	threePhoneBook := newFriedPhoneInfo("osj3", 3, &twoPhoneBook)
-
-	phoneBook := &threePhoneBook
-	var frontAddrBook *PhoneBook
-	for {
-		if phoneBook.Name == "pjh2" {
-			frontAddrBook.PhBook = phoneBook.PhBook
-			break
-		}
-		if phoneBook.PhBook == nil {
-			break
-		}
-		frontAddrBook = phoneBook
-		phoneBook = phoneBook.PhBook
-	}
-
+	fmt.Println(initPhoneBook)
 	curPhoneBook := &threePhoneBook
 	for {
 		fmt.Println(curPhoneBook.Name)
